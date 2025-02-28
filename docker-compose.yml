@@ -9,7 +9,7 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.myresolver.acme.tlschallenge=true
-      - --certificatesresolvers.myresolver.acme.email=lordrolex4u@gmail.com
+      - --certificatesresolvers.myresolver.acme.email=ajalaadetola7@gmail.com
       - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
     ports:
       - "80:80"
@@ -32,7 +32,7 @@ services:
       JWT_SECRET: myfancysecret
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.users-api.rule=Host(`users.todo-hng.com`) || Host(`todo-hng.com`) && PathPrefix(`/api/users`)"
+      - "traefik.http.routers.users-api.rule=Host(`users.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/users`)"
       - "traefik.http.routers.users-api.entrypoints=websecure"
       - "traefik.http.routers.users-api.tls.certresolver=myresolver"
     depends_on:
@@ -47,7 +47,7 @@ services:
       USERS_API_ADDRESS: http://users-api:8083
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.auth-api.rule=Host(`auth.todo-hng.com`) || Host(`todo-hng.com`) && PathPrefix(`/api/auth`)"
+      - "traefik.http.routers.auth-api.rule=Host(`auth.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/auth`)"
       - "traefik.http.routers.auth-api.entrypoints=websecure"
       - "traefik.http.routers.auth-api.tls.certresolver=myresolver"
     depends_on:
@@ -64,7 +64,7 @@ services:
       REDIS_CHANNEL: log_channel
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.todos-api.rule=Host(`todos.todo-hng.com`) || Host(`todo-hng.com`) && PathPrefix(`/api/todos`)"
+      - "traefik.http.routers.todos-api.rule=Host(`todos.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/todos`)"
       - "traefik.http.routers.todos-api.entrypoints=websecure"
       - "traefik.http.routers.todos-api.tls.certresolver=myresolver"
     depends_on:
@@ -92,7 +92,7 @@ services:
       TODOS_API_ADDRESS: http://todos-api:8082
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`todo-hng.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`annie-todos.zapto.org`)"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.routers.frontend.tls.certresolver=myresolver"
     depends_on:
