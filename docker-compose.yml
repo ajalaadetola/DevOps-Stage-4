@@ -32,7 +32,7 @@ services:
       JWT_SECRET: myfancysecret
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.users-api.rule=Host(`users.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/users`)"
+      - "traefik.http.routers.users-api.rule=Host(`users.ajalaadetola.name.ng`) || Host(`ajalaadetola.name.ng`) && PathPrefix(`/api/users`)"
       - "traefik.http.routers.users-api.entrypoints=websecure"
       - "traefik.http.routers.users-api.tls.certresolver=myresolver"
     depends_on:
@@ -47,7 +47,7 @@ services:
       USERS_API_ADDRESS: http://users-api:8083
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.auth-api.rule=Host(`auth.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/auth`)"
+      - "traefik.http.routers.auth-api.rule=Host(`auth.ajalaadetola.name.ng`) || Host(`ajalaadetola.name.ng`) && PathPrefix(`/api/auth`)"
       - "traefik.http.routers.auth-api.entrypoints=websecure"
       - "traefik.http.routers.auth-api.tls.certresolver=myresolver"
     depends_on:
@@ -64,7 +64,7 @@ services:
       REDIS_CHANNEL: log_channel
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.todos-api.rule=Host(`todos.annie-todos.zapto.org`) || Host(`annie-todos.zapto.org`) && PathPrefix(`/api/todos`)"
+      - "traefik.http.routers.todos-api.rule=Host(`todos.ajalaadetola.name.ng`) || Host(`ajalaadetola.name.ng`) && PathPrefix(`/api/todos`)"
       - "traefik.http.routers.todos-api.entrypoints=websecure"
       - "traefik.http.routers.todos-api.tls.certresolver=myresolver"
     depends_on:
@@ -92,7 +92,7 @@ services:
       TODOS_API_ADDRESS: http://todos-api:8082
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`annie-todos.zapto.org`)"
+      - "traefik.http.routers.frontend.rule=Host(`ajalaadetola.name.ng`)"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.routers.frontend.tls.certresolver=myresolver"
     depends_on:
